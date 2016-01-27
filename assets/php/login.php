@@ -30,7 +30,7 @@
 
 			$results = mysqli_num_rows($result); // Checks how many rows are returned.
 
-			if ($results) echo "That email address is registered. Do you want to log in?"; // if results is truthy, then an email had been found
+			if ($results) echo "That email address is registered. Do you want to log in?"; // if results is truthy, then an email had been found 
 				else { // otherwise results is falsy and no email was found
 
 					$query = "INSERT INTO `users` (`email`, `password`) VALUES ('".mysqli_real_escape_string($link, $_POST['email'])."', '".md5(md5($_POST['email']).$_POST['password'])."')";
